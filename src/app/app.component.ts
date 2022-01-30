@@ -8,4 +8,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title: string = '01-bases';
   contador: number = 0;
+
+  suma(): void{
+    this.contador +=1;
+  }
+
+  resta(): void{
+    this.contador -=1;
+  }
 }
