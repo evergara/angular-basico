@@ -1,0 +1,16 @@
+<p>listado de hores</p>
+
+<ul>
+    <li *ngFor="let heroe of heroes; let i = index">
+       <span>{{i}} - {{heroe.name}}</span> <button  (click)="borrarHerore(i);">eliminar</button>
+    </li>
+</ul>
+
+<div *ngIf="heroesEliminado.length>0">
+    <h3>Heroe Borrado</h3>
+    <ul>
+        <li *ngFor="let heroe of heroesEliminado">
+            <span>{{heroe.name}}</span>
+        </li>
+    </ul>   
+</div>
