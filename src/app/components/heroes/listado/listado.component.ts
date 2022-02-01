@@ -37,4 +37,11 @@ export class ListadoComponent implements OnInit {
     let heroe =  this.heroes.splice(index, 1);
     this.heroesEliminado.push(heroe[0]);
   }
+
+  restarHerore(index: number): void{
+    let heroe =  this.heroesEliminado.splice(index, 1);
+    this.heroes.push(heroe[0]);
+  }
+
+  
 }

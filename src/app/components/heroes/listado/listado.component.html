@@ -2,15 +2,18 @@
 
 <ul>
     <li *ngFor="let heroe of heroes; let i = index">
-       <span>{{i}} - {{heroe.name}}</span> <button  (click)="borrarHerore(i);">eliminar</button>
+       <span>{{heroe.name}}</span> <button  (click)="borrarHerore(i);">eliminar</button>
     </li>
 </ul>
 
-<div *ngIf="heroesEliminado.length>0">
+<div *ngIf="heroesEliminado.length>0; else noBorrado">
     <h3>Heroe Borrado</h3>
     <ul>
-        <li *ngFor="let heroe of heroesEliminado">
-            <span>{{heroe.name}}</span>
+        <li *ngFor="let heroe of heroesEliminado; let i = index">
+            <span>{{heroe.name}}</span> <button  (click)="restarHerore(i);">Restaurar</button>
         </li>
     </ul>   
 </div>
+<ng-template #noBorrado>
+    Aun no se ha borrado nada
+</ng-template>
